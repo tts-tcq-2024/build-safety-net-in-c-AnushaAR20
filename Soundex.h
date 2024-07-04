@@ -5,7 +5,6 @@
 #include <ctype.h>
 #include <string.h>
 
-
 char getSoundexCode(char c) {
     static const char lookup[26] = {
         // A, B,  C,  D, E, F,  G,  H, I, J, K, L,  M,  N,  O, P, Q,  R, S,  T, U, V, W, X,  Y, Z
@@ -17,21 +16,31 @@ char getSoundexCode(char c) {
 }
 
 void generateSoundex(const char *name, char *soundex) {
-    int len = strlen(name);
+    if (!name || !*name) {
+        strcpy(soundex, "0000");
+        return;
+    }
+
+    // Initialize with the first letter (capitalized)
     soundex[0] = toupper(name[0]);
     int sIndex = 1;
+    char prev_code = getSoundexCode(soundex[0]);
 
-    for (int i = 1; i < len && sIndex < 4; i++) {
+    // Process remaining characters
+    for (int i = 1; name[i] != '\0' && sIndex < 4; i++) {
         char code = getSoundexCode(name[i]);
-        if (code != '0' && code != soundex[sIndex - 1]) {
+        if (code != '0' && code != prev_code) {
             soundex[sIndex++] = code;
+            prev_code = code;
         }
     }
 
+    // Pad with zeros if necessary
     while (sIndex < 4) {
         soundex[sIndex++] = '0';
     }
 
     soundex[4] = '\0';
 }
+
 #endif // SOUNDEX_H
