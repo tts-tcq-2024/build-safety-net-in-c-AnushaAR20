@@ -5,17 +5,18 @@
 #include <ctype.h>
 #include <string.h>
 
+
 char getSoundexCode(char c) {
+    static const char lookup[26] = {
+        // A, B,  C,  D, E, F,  G,  H, I, J, K, L,  M,  N,  O, P, Q,  R, S,  T, U, V, W, X,  Y, Z
+        '0', '1', '2', '3', '0', '1', '2', '0', '0', '2', '2', '4', '5', '5', '0', '1', '2', '6', '2', '3', '0', '1', '0', '2', '0', '2'
+    };
+
     c = toupper(c);
-    switch (c) {
-        case 'B': case 'F': case 'P': case 'V': return '1';
-        case 'C': case 'G': case 'J': case 'K': case 'Q': case 'S': case 'X': case 'Z': return '2';
-        case 'D': case 'T': return '3';
-        case 'L': return '4';
-        case 'M': case 'N': return '5';
-        case 'R': return '6';
-        default: return '0'; // For A, E, I, O, U, H, W, Y
+    if (c >= 'A' && c <= 'Z') {
+        return lookup[c - 'A'];
     }
+    return '0'; // For characters not in the alphabet (A-Z)
 }
 
 void generateSoundex(const char *name, char *soundex) {
