@@ -13,37 +13,25 @@ char getSoundexCode(char c) {
     };
 
     c = toupper(c);
-    if (c >= 'A' && c <= 'Z') {
-        return lookup[c - 'A'];
-    }
-    return '0'; // For characters not in the alphabet (A-Z)
+    return (c >= 'A' && c <= 'Z') ? lookup[c - 'A'] : '0';
 }
 
 void generateSoundex(const char *name, char *soundex) {
-    if (!name || !*name) {
-        strcpy(soundex, "0000");
-        return;
-    }
-
-    // Initialize with the first letter (capitalized)
+    int len = strlen(name);
     soundex[0] = toupper(name[0]);
     int sIndex = 1;
-    char prev_code = getSoundexCode(soundex[0]);
 
-    for (int i = 1; name[i] != '\0' && sIndex < 4; i++) {
+    for (int i = 1; i < len && sIndex < 4; i++) {
         char code = getSoundexCode(name[i]);
-        if (code != '0' && code != prev_code) {
+        if (code != '0' && code != soundex[sIndex - 1]) {
             soundex[sIndex++] = code;
-            prev_code = code;
         }
     }
 
-    // Pad with zeros if necessary
     while (sIndex < 4) {
         soundex[sIndex++] = '0';
     }
 
     soundex[4] = '\0';
 }
-
 #endif // SOUNDEX_H
