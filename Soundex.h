@@ -19,15 +19,14 @@ char getSoundexCode(char c) {
 }
 
 void generateSoundex(const char *name, char *soundex) {
+    int len = strlen(name);
     soundex[0] = toupper(name[0]);
     int sIndex = 1;
-    char lastCode = getSoundexCode(soundex[0]);
 
-    for (int i = 1; name[i] != '\0' && sIndex < 4; i++) {
+    for (int i = 1; i < len && sIndex < 4; i++) {
         char code = getSoundexCode(name[i]);
-        if (code != '0' && code != lastCode) {
+        if (code != '0' && code != soundex[sIndex - 1]) {
             soundex[sIndex++] = code;
-            lastCode = code;
         }
     }
 
@@ -37,5 +36,3 @@ void generateSoundex(const char *name, char *soundex) {
 
     soundex[4] = '\0';
 }
-
-#endif // SOUNDEX_H
