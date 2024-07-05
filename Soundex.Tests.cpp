@@ -1,12 +1,6 @@
 #include <gtest/gtest.h>
 #include "Soundex.h"
 
-void test_ReplacesConsonantsWithAppropriateDigits(void) {
-    char soundex[5];
-    generateSoundex("AX", soundex);
-    ASSERT_EQ("A200", soundex);
-}
-/*
 TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
  //AAA
   char soundex[5];
@@ -17,9 +11,9 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
 TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits2) {
  //AAA
   char soundex[5];
-  generateSoundex("AB", soundex);
- // ASSERT_EQ(soundex,"A100");
-}
+  generateSoundex("BA", soundex);
+ // ASSERT_EQ(soundex,"B000");
+/*
 TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits3) {
  //AAA
   char soundex[5];
