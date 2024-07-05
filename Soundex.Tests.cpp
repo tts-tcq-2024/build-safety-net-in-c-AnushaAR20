@@ -4,7 +4,7 @@
 void test_ReplacesConsonantsWithAppropriateDigits(void) {
     char soundex[5];
     generateSoundex("AX", soundex);
-    TEST_ASSERT_EQUAL_STRING("A200", soundex);
+    ASSERT_EQ("A200", soundex);
 }
 /*
 TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
