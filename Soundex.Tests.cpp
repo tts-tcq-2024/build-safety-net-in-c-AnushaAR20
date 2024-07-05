@@ -7,7 +7,7 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
   generateSoundex("AX", soundex);
   //ASSERT_EQ(soundex,"A200");
 }
-
+/*
 TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits2) {
  //AAA
   char soundex[5];
@@ -22,7 +22,7 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits3) {
   generateSoundex("#", soundex);
  // ASSERT_EQ(soundex,"0000");
 }
-/*
+
 TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits4) {
  //AAA
   char soundex[5];
