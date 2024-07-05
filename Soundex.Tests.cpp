@@ -7,10 +7,10 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
   generateSoundex("AX", soundex);
  // ASSERT_EQ(soundex,"A200");
 }
-void test_IgnoresVowelsAndSpecialCharacters(void) {
-    char soundex[5];
-    generateSoundex("Aeiouhxwy", soundex);
-    ASSERT_EQ("A000", soundex);
+TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits2) {
+ //AAA
+  char soundex[5];
+  generateSoundex("AB", soundex);
+ // ASSERT_EQ(soundex,"A200");
 }
-
 
