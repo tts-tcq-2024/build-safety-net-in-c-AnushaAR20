@@ -1,13 +1,19 @@
 #include <gtest/gtest.h>
 #include "Soundex.h"
 
+void test_ReplacesConsonantsWithAppropriateDigits(void) {
+    char soundex[5];
+    generateSoundex("AX", soundex);
+    TEST_ASSERT_EQUAL_STRING("A200", soundex);
+}
+/*
 TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
  //AAA
   char soundex[5];
   generateSoundex("AX", soundex);
   ASSERT_EQ(soundex,"A200");
 }
-/*
+
 TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits2) {
  //AAA
   char soundex[5];
