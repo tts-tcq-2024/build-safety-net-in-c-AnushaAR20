@@ -29,5 +29,5 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits4) {
   generateSoundex("LAIO", soundex);
  // ASSERT_EQ(soundex,"L000");
 }
-*/
+
 
