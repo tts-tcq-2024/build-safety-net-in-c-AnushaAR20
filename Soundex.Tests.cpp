@@ -29,5 +29,17 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits4) {
   generateSoundex("LAIO", soundex);
  // ASSERT_EQ(soundex,"L000");
 }
+TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits5) {
+ //AAA
+  char soundex[5];
+  generateSoundex("", soundex);
+ // ASSERT_EQ(soundex,"0000");
+}
+TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits6) {
+ //AAA
+  char soundex[5];
+  generateSoundex("IIIIIII", soundex);
+ // ASSERT_EQ(soundex,"I000");
+}
 
 
