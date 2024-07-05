@@ -15,13 +15,14 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits2) {
  // ASSERT_EQ(soundex,"B000");
 }
 
-/*
+
 TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits3) {
  //AAA
   char soundex[5];
   generateSoundex("#", soundex);
  // ASSERT_EQ(soundex,"0000");
 }
+/*
 TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits4) {
  //AAA
   char soundex[5];
