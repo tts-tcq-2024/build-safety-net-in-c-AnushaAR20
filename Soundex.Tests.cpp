@@ -4,8 +4,8 @@
 TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
  //AAA
   char soundex[5];
-  generateSoundex("AX", soundex);
-  //ASSERT_EQ(soundex,"A200");
+  generateSoundex("Aeiouhxwy", soundex);
+  //ASSERT_EQ(soundex,"A000");
 }
 
 TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits2) {
@@ -40,6 +40,12 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits6) {
   char soundex[5];
   generateSoundex("IIIIIII", soundex);
  // ASSERT_EQ(soundex,"I000");
+}
+TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits7) {
+ //AAA
+  char soundex[5];
+  generateSoundex("AEIOU", soundex);
+ // ASSERT_EQ(soundex,"A000");
 }
 
 
