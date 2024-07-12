@@ -11,7 +11,7 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
 TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits2) {
  //AAA
   char soundex[5];
-  generateSoundex("BA", soundex);
+  generateSoundex("B", soundex);
  // ASSERT_EQ(soundex,"B000");
 }
 
